@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <title>PBN 빌더 블로그 | 서버 웜업 전략 — 마포를 장악하라</title>
+    <meta name="description" content="서버 웜업의 진실: 규칙을 깨고 PBN 네트워크를 지배하는 법. 마포 PBN 빌더의 날것 그대로의 인사이트. 전화 010-6279-0862.">
+    <meta name="keywords" content="PBN 빌더 블로그, 서버 웜업 전략, 마포 PBN, 네트워크 장악, 에기스 워머, 블로그 네트워크, 링크 파워">
+    <link rel="canonical" href="https://sf-t3-1779642675702-231.pages.dev/blog">
+    <meta property="og:title" content="서버 웜업의 진실 — PBN 빌더 블로그">
+    <meta property="og:description" content="규칙을 깨고 PBN 네트워크를 장악하는 법. 마포 PBN 빌더의 날것 인사이트.">
+    <style>
+        /* RESET */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        /* FONTS & BODY */
+        body {
+            font-family: 'Courier New', 'Courier', monospace;
+            background: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        /* FULL BLEED LAYOUT */
+        header, main, footer { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        /* AIRY SPACE */
+        :root { --section-gap: 6rem; --card-gap: 2rem; }
+        @media (max-width: 768px) {
+            header, main, footer { padding: 0 1rem; }
+            :root { --section-gap: 3rem; --card-gap: 1rem; }
+        }
+        /* BLOCK STYLES */
+        section { margin-bottom: var(--section-gap); padding: 2rem 0; border-top: 2px solid #ff0055; }
+        section:first-of-type { border-top: none; }
+        /* TYPOGRAPHY */
+        h1, h2, h3 { font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; color: #ffffff; }
+        h1 { font-size: 3.5rem; line-height: 1; margin-bottom: 1.5rem; text-shadow: 4px 4px 0 #ff0055; }
+        h2 { font-size: 2.5rem; margin-bottom: 1rem; border-left: 6px solid #ff0055; padding-left: 1rem; }
+        h3 { font-size: 1.6rem; margin-bottom: 0.75rem; color: #ffaa00; }
+        p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #c0c0c0; }
+        a { color: #ff0055; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+        a:hover { border-bottom-color: #ff0055; }
+        /* nav-preset */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 2px solid #ff0055; flex-wrap: wrap; }
+        nav .logo { font-size: 1.8rem; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: -0.02em; border: none; }
+        nav .logo:hover { border: none; }
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav ul li a { font-weight: 600; font-size: 1.1rem; text-transform: uppercase; border-bottom: 2px solid transparent; }
+        nav ul li a.active { border-bottom-color: #ff0055; color: #ff0055; }
+        .hamburger-menu { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 5px; }
+        .hamburger-menu span { width: 28px; height: 3px; background: #fff; border-radius: 0; }
+        .tel-link { font-size: 1.2rem; font-weight: bold; color: #ff0055; border: 2px solid #ff0055; padding: 0.4rem 1rem; transition: background 0.2s, color 0.2s; }
+        .tel-link:hover { background: #ff0055; color: #0d0d0d; border-color: #ff0055; }
+        @media (max-width: 768px) {
+            nav ul { display: none; flex-direction: column; width: 100%; background: #111; padding: 1rem; gap: 1rem; border-top: 1px solid #ff0055; margin-top: 1rem; }
+            nav ul.open { display: flex; }
+            .hamburger-menu { display: flex; }
+            nav { align-items: flex-start; }
+            .tel-link { margin-top: 1rem; }
+        }
+        /* card-like blocks */
+        .card { border: 2px solid #333; padding: 2rem; margin-bottom: var(--card-gap); background: #111; box-shadow: 6px 6px 0 #0a0a0a; transition: box-shadow 0.2s, border-color 0.2s; }
+        .card:hover { border-color: #ff0055; box-shadow: 6px 6px 0 #ff0055; }
+        .card h3 { margin-top: 0; }
+        .card p:last-child { margin-bottom: 0; }
+        .cta-box { border: 3px solid #ff0055; padding: 3rem 2rem; text-align: center; background: #111; margin-top: 3rem; }
+        .cta-box h2 { border-left: none; padding-left: 0; }
+        .cta-box .tel-link { display: inline-block; margin-top: 1.5rem; font-size: 1.6rem; padding: 0.6rem 2rem; }
+        /* footer */
+        footer { border-top: 2px solid #ff0055; padding: 2rem 0; text-align: center; color: #666; font-size: 0.9rem; }
+        footer a { color: #ff0055; }
+        /* utilities */
+        .text-accent { color: #ff0055; }
+        .text-warning { color: #ffaa00; }
+        .mt-2 { margin-top: 2rem; }
+        .mb-2 { margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">PBN 빌더</a>
+            <button class="hamburger-menu" aria-label="메뉴 열기" onclick="this.nextElementSibling.classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+            <ul>
+                <li><a href="/">홈</a></li>
+                <li><a href="/blog" class="active">블로그</a></li>
+                <li><a href="/contact">연락처</a></li>
+                <li><a href="tel:01062790862" class="tel-link">010-6279-0862</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section (블로그 전용) -->
+        <section>
+            <h1>서버 웜업의 진실</h1>
+            <p class="text-warning" style="font-size:1.3rem; text-transform:uppercase; letter-spacing:0.1em;">규칙을 깨고 네트워크를 장악하는 법 — 마포 PBN 빌더의 날것 그대로의 인사이트</p>
+            <p>당신이 알고 있는 ‘안전한’ PBN은 이미 죽었다. 검색 엔진은 패턴을 읽고, 가짜 블로그를 걸러내며, 링크 파워를 무력화한다. 유일한 해결책? 서버를 <span class="text-accent">진짜처럼</span> 예열하라. 나는 마포에서 매일 서버를 굴리고, 링크를 심고, 알고리즘을 농락한다. 이 글은 그 전쟁의 기록이다.</p>
+        </section>
+
+        <!-- 블로그 본문 (정보성 글 1편) -->
+        <section>
+            <article class="card">
+                <h2>왜 대부분의 PBN은 실패하는가?</h2>
+                <p><strong>발행일:</strong> 2025-04-20 | <strong>필자:</strong> 에기스 워머</p>
+                <p>들어봐라. 당신이 30개의 블로그를 만들고, 각각 3개의 포스트를 올린 뒤 링크를 박았다고 치자. 처음 한 달은 잘 나간다. 세 달 뒤? 전멸이다. 왜? <span class="text-accent">서버가 식었기 때문이다.</span></p>
+                <p>검색 엔진은 단순히 콘텐츠만 보지 않는다. 서버의 행동 패턴, 요청 간격, 트래픽 흐름, 심지어 CPU 사용률까지 추적한다. 당신의 PBN 사이트가 하루에 3번 방문되고, 모두 동일한 IP에서 온다면? 바로 적발이다. 이것은 초등학교 수준의 함정이다.</p>
+                <p>내가 마포에서 구축한 방식은 다르다. 각 서버는 실제 사람이 운영하는 것처럼 웜업된다. 임의의 시간에 페이지를 요청하고, 스크롤을 흉내 내며, 다른 사이트로 이동하는 패턴을 만든다. <strong>서버가 ‘살아있다’는 인식을 심는 것</strong>이 핵심이다.</p>
+                <p>예를 들어, Aegis 워머 스크립트는 47분 간격으로 무작위 사용자 에이전트를 사용해 사이트를 방문한다. 방문할 때마다 2~3페이지를 돌아다니고, 5~8초 간격으로 클릭 이벤트를 발생시킨다. 이 데이터는 수집되어 다음 방문에 반영된다. 결과? 서버는 마치 12명의 실제 사용자가 매일 활동하는 것처럼 보인다.</p>
+                <p><span class="text-warning">경고:</span> 절대 같은 패턴을 반복하지 마라. 검증된 툴을 쓰든, 직접 스크립트를 짜든, 반드시 무작위성을 극대화해야 한다. 마포의 공장 지하에서 24시간 굴러가는 내 서버들은 죽은 적이 없다. 이유는 단 하나 — <span class="text-accent">규칙을 스스로 깨기 때문이다.</span></p>
+                <p>더 알고 싶은가? 전화로 직접 물어봐라. 여기에 적지 않은 기술들도 있다.</p>
+            </article>
+
+            <!-- 추가 인사이트 카드 (보조 콘텐츠) -->
+            <div class="card">
+                <h3>PBN 구축 3대 원칙</h3>
+                <ul style="list-style: none; padding-left:0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #333;">1. <span class="text-accent">서버 웜업</span> — 콘텐츠보다 중요하다. 죽은 서버는 링크 파워가 0이다.</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #333;">2. <span class="text-accent">도메인 다양성</span> — 같은 등록자, 같은 호스팅? 적발된다. 마포에서 직접 관리하는 12개 호스팅을 사용하라.</li>
+                    <li style="padding: 0.5rem 0;">3. <span class="text-accent">행동 패턴</span> — 모든 블로그가 동일한 테마, 동일한 글자 수? 알고리즘이 웃는다. 각 사이트를 ‘다른 사람’처럼 만들어라.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ 섹션 (서버 웜업 관련) -->
+        <section>
+            <h2>자주 묻는 질문 — 서버 웜업 편</h2>
+            <div class="card">
+                <h3>Q: 웜업 없이 PBN을 운영하면 꼭 걸리나요?</h3>
+                <p>A: 시간 문제다. 요즘 검색 엔진은 사이트의 ‘활동성’을 핵심 신호로 사용한다. 웜업 없는 PBN은 마치 시체를 링크에 매달아 놓은 것과 같다. 반드시 예열하라.</p>
+            </div>
+            <div class="card">
+                <h3>Q: 웜업 스크립트는 직접 만들어야 하나요?</h3>
+                <p>A: 내 경험상 커스텀이 가장 좋다. 하지만 시간이 없다면, Aegis 워머나 검증된 상용 툴을 써라. 단, 설정값은 반드시 자신의 환경에 맞게 수정해야 한다. 복붙은 죽음이다.</p>
+            </div>
+            <div class="card">
+                <h3>Q: 마포 지역에서 서버를 운영하면 이점이 있나요?</h3>
+                <p>A: 한국 트래픽의 중심이다. 네트워크 지연 시간이 짧고, 다양한 ISP를 확보하기 쉽다. 내가 마포를 고집하는 이유는 단 하나 — <span class="text-accent">지리적 우위가 링크 파워를 강화하기 때문이다.</span></p>
+            </div>
+        </section>
+
+        <!-- 강력한 CTA -->
+        <section style="border-top: 4px solid #ff0055;">
+            <div class="cta-box">
+                <h2>지금 전화하라. 네트워크를 장악할 준비가 됐다.</h2>
+                <p style="font-size:1.2rem; margin-top:1rem;">마포 PBN 빌더가 직접 당신의 서버를 예열하고, 죽은 링크를 살려낸다. 규칙을 깨고 싶은가?<br><span class="text-accent" style="font-weight:bold;">010-627
+</body>
+</html>
